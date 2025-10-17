@@ -1,59 +1,59 @@
-# MoviehubFront
+# 🎬 MovieHub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+Bem-vindo ao repositório do **MovieHub**, um hub de filmes e séries desenvolvido para catalogar e gerenciar informações sobre entretenimento, incluindo detalhes, categorias e serviços de *streaming* disponíveis.
 
-## Development server
+Este repositório contém o código do **Backend** da aplicação, construído com Java e o *framework* Spring Boot. O **Frontend** está em fase de planejamento e será desenvolvido com **Angular**.
 
-To start a local development server, run:
+## 🚀 Status do Projeto
 
-```bash
-ng serve
-```
+| Componente | Linguagem/Framework | Status |
+| :--- | :--- | :--- |
+| **Backend (API)** | Java (Spring Boot) | Finalizado e Ativo |
+| **Frontend (Web)** | Angular | Em Desenvolvimento |
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+### Estrutura e Serviços Chave
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+O projeto está organizado em serviços dedicados, garantindo a separação de responsabilidades:
 
-```bash
-ng generate component component-name
-```
+| Serviço | Funcionalidade Principal | Referência |
+| :--- | :--- | :--- |
+| `AuthService` | Implementa `UserDetailsService`, carregando usuários pelo email. | `AuthService.java` |
+| `UserService` | Gerenciamento de usuários, incluindo a codificação de senhas com `PasswordEncoder`. | `UserService.java` |
+| `MovieService` | CRUD completo para filmes, gerenciando relacionamento com **Categorias** e **Streamings**. | `MovieService.java` |
+| `CategoryService` | CRUD para as categorias dos filmes (Ex: Ação, Drama). | `CategoryService.java` |
+| `StreamingService` | CRUD para os serviços de *streaming* (Ex: Netflix, Prime Video). | `StreamingService.java` |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📐 Frontend (Angular)
 
-```bash
-ng generate --help
-```
+Estou ativamente iniciando o desenvolvimento do **Frontend** do MovieHub utilizando **Angular**.
 
-## Building
+### Objetivos do Frontend
 
-To build the project run:
+1.  **Interface Moderna:** Criar uma experiência de usuário (UX) intuitiva e moderna.
+2.  **Consumo de API:** Integrar-se totalmente com o *backend* Java/Spring Boot para buscar, criar e atualizar dados.
+3.  **Componentes Reutilizáveis:** Utilizar a modularidade do Angular para construir componentes eficientes e reutilizáveis (Ex: Cartões de Filmes, Navegação, Formulários de Login).
+4.  **Gerenciamento de Estado:** Implementar uma estratégia de gerenciamento de estado para manter a aplicação rápida e responsiva.
+5.  **Temas:** Possivelmente implementar um sistema de temas para alternância (Ex: Dark/Light Mode).
 
-```bash
-ng build
-```
+## 🛠️ Como Executar o Backend
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Para rodar o projeto Java (Spring Boot) localmente, siga os passos abaixo:
 
-## Running unit tests
+1.  **Pré-requisitos:** Certifique-se de ter o **Java 17** e o **Maven** instalados.
+2.  **Banco de Dados:** Configure uma instância do **PostgreSQL** e atualize as credenciais no arquivo `application.properties` (ou `application.yml`).
+3.  **Execução:**
+    ```bash
+    # Navegue até a raiz do projeto onde está o pom.xml
+    ./mvnw spring-boot:run
+    ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Documentação da API
 
-```bash
-ng test
-```
+Após a inicialização, a documentação da API (Swagger UI) estará disponível em:
 
-## Running end-to-end tests
+**`http://localhost:8080/swagger-ui.html`**
 
-For end-to-end (e2e) testing, run:
+## 🤝 Contato
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Desenvolvido por: **matheus-plaza**
