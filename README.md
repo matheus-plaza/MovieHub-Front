@@ -32,7 +32,7 @@ Estou ativamente iniciando o desenvolvimento do **Frontend** do MovieHub utiliza
 
 1.  **Interface Moderna:** Criar uma experiência de usuário (UX) intuitiva e moderna.
 2.  **Consumo de API:** Integrar-se totalmente com o *backend* Java/Spring Boot para buscar, criar e atualizar dados.
-3.  **Componentes Reutilizáveis:** Utilizar a modularidade do Angular para construir componentes eficientes e reutilizáveis (Ex: Cartões de Filmes, Navegação, Formulários de Login).
+3.  **Componentes Reutilizáveis:** Utilizar a modularidade do Angular para construir componentes eficientes e reutilizáveis (Ex: Cartões de Filmes, Navegação, Formulários de SignUp).
 4.  **Gerenciamento de Estado:** Implementar uma estratégia de gerenciamento de estado para manter a aplicação rápida e responsiva.
 5.  **Temas:** Possivelmente implementar um sistema de temas para alternância (Ex: Dark/Light Mode).
 
