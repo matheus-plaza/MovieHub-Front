@@ -1,1 +1,58 @@
-<p>create-movie-modal works!</p>
+<div class="page-container">
+
+  <div class="logo-area">
+    <span class="brand-logo">MOVIEHUB</span>
+  </div>
+
+  <div class="form-box">
+    <h2 class="form-title">Cadastre seu filme aqui</h2>
+
+    <form class="movie-form">
+
+      <div class="input-grid">
+
+        <div class="form-group">
+          <input type="text" placeholder="Nome do filme" class="dark-input">
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="Descrição do filme" class="dark-input">
+        </div>
+
+        <div class="form-group">
+          <input type="text" onfocus="(this.type='date')" placeholder="Data de lançamento" class="dark-input">
+        </div>
+
+        <div class="form-group">
+          <input type="number" placeholder="Avaliação geral" class="dark-input" min="0" max="10" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <select class="dark-input">
+            <option value="" disabled selected>Aonde está disponível?</option>
+            <option value="netflix">Netflix</option>
+            <option value="amazon">Amazon Prime</option>
+            <option value="claro">Claro-tv</option>
+            <option value="disney">Disney+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <select class="dark-input">
+            <option value="" disabled selected>Qual categoria</option>
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="drama">Drama</option>
+            <option value="scifi">Ficção</option>
+          </select>
+        </div>
+
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Cadastrar filme
+      </button>
+
+    </form>
+  </div>
+</div>
