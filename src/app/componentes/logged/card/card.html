@@ -16,17 +16,17 @@
 
     <div class="movie-info">
       <div class="d-flex align-items-center gap-3 flex-wrap">
-                <span class="meta-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                  {{ duration }}
-                </span>
+        <span class="meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          {{ duration }}
+        </span>
 
         <span class="meta-item age-box">
-                    {{ ageRating }}
-                </span>
+            {{ ageRating }}
+        </span>
 
         <div class="meta-item rating" [ngClass]="isGoodRating ? 'rating-good' : 'rating-bad'">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

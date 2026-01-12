@@ -1,0 +1,56 @@
+.page-container {
+  padding: 100px 40px 40px 40px;
+  background-color: #060606;
+  min-height: 100vh;
+}
+
+.section-title {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  border-left: 5px solid #E50914;
+  padding-left: 15px;
+}
+
+.movie-grid {
+  display: grid;
+  /* layout automático:
+     - Em telas grandes: 4 ou 5 cards
+     - Em laptops: 3 cards
+     - Em tablets: 2 cards
+     - Em celular: 1 card
+  */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  gap: 30px;
+  align-items: stretch;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  border-left: 5px solid #E50914;
+  padding-left: 15px;
+}
+
+.add-movie-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid #E50914;
+  color: #E50914;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.add-movie-btn:hover {
+  background-color: #E50914;
+  color: white;
+}

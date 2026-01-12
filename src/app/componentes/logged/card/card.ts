@@ -14,9 +14,7 @@ export class Card {
   @Input() duration: string = '';
   @Input() ageRating: string = '';
   @Input() releaseDate: string = '';
-
   @Input() provider: string = '';
-
   @Input() approvalRating: number = 0;
   @Input() rank: number | null = null;
 
