@@ -1,7 +1,23 @@
-<app-header />
-<div>
-  <app-card/>
-  <app-card/>
-  <app-card/>
-  <app-card/>
+<app-header/>
+<div style="margin-top: 100px; padding: 20px;">
+  <app-card
+    title="O Poderoso Chefão"
+    description="Este projeto consiste na construção do frontend para o MovieFlix, utilizando Angular para desenvolvimento e CSS com Cursor para estilização. Implementaremos:"
+    duration="2h 55m"
+    ageRating="16"
+    provider="Claro-tv"
+    [approvalRating]="98"
+    [rank]="1">
+  </app-card>
+
+  <app-card
+    title="Filme Ruim"
+    description="Não perca seu tempo..."
+    duration="1h 30m"
+    ageRating="10"
+    provider="Netflix"
+    [approvalRating]="40"
+    [rank]="null">
+  </app-card>
+
 </div>
