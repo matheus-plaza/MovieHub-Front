@@ -1,0 +1,81 @@
+#sign-up-container {
+  color: #fff;
+  width: 100%;
+  padding-top: 50px;
+}
+
+/* MUDOU AQUI: O nome da classe agora é semântico */
+.signup-box {
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 450px;
+  padding: 50px !important;
+  border-radius: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+
+}
+
+/* --- INPUTS --- */
+.custom-input {
+  background-color: #333 !important;
+  border: none;
+  border-radius: 4px;
+  color: #fff !important;
+  padding: 16px;
+  height: auto;
+  font-size: 1rem;
+}
+
+/* Hack do Autofill (Mantido) */
+.custom-input:-webkit-autofill,
+.custom-input:-webkit-autofill:hover,
+.custom-input:-webkit-autofill:focus,
+.custom-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #333 inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.custom-input:focus {
+  background-color: #454545 !important;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+}
+
+.custom-input::placeholder {
+  color: #8c8c8c;
+}
+
+/* --- BOTÕES --- */
+.custom-button {
+  background-color: #E50914;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.custom-button:hover {
+  background-color: #c11119;
+}
+
+.new-here {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #b3b3b3;
+}
+
+.new-here a {
+  color: #E50914 !important;
+  font-weight: 500;
+}
+
+.new-here a:hover {
+  text-decoration: underline !important;
+}
