@@ -1,1 +1,37 @@
-<p>header works!</p>
+<div id="header" class="d-flex align-items-center justify-content-between px-4">
+  <div class="d-flex align-items-center">
+
+    <div id="header-title">
+      <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="curve" d="M 0 55 Q 150 35 300 55" fill="transparent"/>
+        </defs>
+        <text fill="#E50914" font-family="'Bebas Neue', sans-serif" font-size="52" font-weight="bold" letter-spacing="1">
+          <textPath href="#curve" startOffset="50%" text-anchor="middle">MOVIEHUB</textPath>
+        </text>
+      </svg>
+    </div>
+
+    <ul class="nav-links d-flex list-unstyled mb-0 ms-3">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Séries</a></li>
+      <li><a href="#">Filmes</a></li>
+      <li><a href="#">Originais</a></li>
+      <li><a href="#">Novidades</a></li>
+    </ul>
+  </div>
+
+  <div class="d-flex align-items-center gap-3">
+    <div class="search-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" placeholder="Titles, people, genres" />
+    </div>
+
+    <div class="user-avatar">
+      <img src="/stewie.png" alt="User">
+    </div>
+  </div>
+</div>

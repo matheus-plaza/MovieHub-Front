@@ -1,0 +1,73 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); /* Degradê sutil no topo */
+  background-color: #060606;
+  z-index: 1000;
+  transition: background-color 0.4s;
+}
+
+#header-title {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+#header-title svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.nav-links {
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #b3b3b3;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  height: 35px;
+}
+
+.search-box svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: 200px;
+  font-size: 0.9rem;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+}
