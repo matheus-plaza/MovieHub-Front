@@ -4,18 +4,20 @@
   left: 0;
   width: 100%;
   height: 70px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); /* Degradê sutil no topo */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 100%);
   background-color: #060606;
   z-index: 1000;
   transition: background-color 0.4s;
+  box-sizing: border-box;
 }
 
 #header-title {
-  width: 200px;
+  width: 160px;
   height: 80px;
   display: flex;
   align-items: center;
   padding-top: 15px;
+  flex-shrink: 0;
 }
 
 #header-title svg {
@@ -25,6 +27,7 @@
 }
 
 .nav-links {
+  display: flex;
   gap: 20px;
 }
 
@@ -34,6 +37,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .nav-links li a:hover {
@@ -43,16 +47,17 @@
 .search-box {
   display: flex;
   align-items: center;
-  background-color: #000;
-  border: 1px solid #ccc;
+  background-color: rgba(0,0,0,0.5);
+  border: 1px solid #333;
   padding: 5px 10px;
   border-radius: 4px;
   height: 35px;
+  transition: width 0.3s;
 }
 
 .search-box svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin-right: 8px;
   opacity: 0.8;
 }
@@ -67,8 +72,74 @@
 }
 
 .user-avatar img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
   object-fit: cover;
   cursor: pointer;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+@media (max-width: 900px) {
+  .mobile-menu-btn {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .search-box input {
+    display: none;
+  }
+
+  .search-box {
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #060606;
+    border-bottom: 1px solid #333;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-links li a:hover {
+    background-color: #141414;
+    color: #E50914;
+  }
 }

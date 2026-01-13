@@ -1,6 +1,6 @@
 <div id="header" class="d-flex align-items-center justify-content-between px-4">
-  <div class="d-flex align-items-center">
 
+  <div class="d-flex align-items-center gap-3">
     <div id="header-title">
       <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -12,7 +12,7 @@
       </svg>
     </div>
 
-    <ul class="nav-links d-flex list-unstyled mb-0 ms-3">
+    <ul class="nav-links list-unstyled mb-0 ms-3" [class.active]="isMenuOpen" (click)="isMenuOpen = false">
       <li><a routerLink="/home">Início</a></li>
       <li><a routerLink="/home">Séries</a></li>
       <li><a routerLink="/home">Filmes</a></li>
@@ -21,17 +21,32 @@
     </ul>
   </div>
 
-  <div class="d-flex align-items-center gap-3">
+  <div class="d-flex align-items-center gap-3 right-section">
+
     <div class="search-box">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
-      <input type="text" placeholder="Titles, people, genres" />
+      <input type="text" placeholder="Buscar..." />
     </div>
 
     <div class="user-avatar">
       <img src="/stewie.png" alt="User">
     </div>
+
+    <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        @if (!isMenuOpen) {
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        } @else {
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        }
+      </svg>
+    </button>
+
   </div>
 </div>
