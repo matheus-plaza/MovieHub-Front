@@ -18,7 +18,7 @@ export interface MovieRequest {
 
   rating: number; // Double no Java vira number no TS
 
-  // No Request você manda apenas os IDs
+  // No Request apenas os IDs
   categoriesIds: number[];
   streamingsIds: number[];
 }

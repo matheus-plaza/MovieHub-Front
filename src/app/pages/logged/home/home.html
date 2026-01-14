@@ -3,6 +3,8 @@
 <div class="page-container">
 
   <div class="section-header">
+    <h2 class="section-title">Filmes em Destaque</h2>
+
     <a routerLink="/novo-filme" class="add-movie-btn">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -13,16 +15,20 @@
   </div>
 
   <div class="movie-grid">
-    @for (movie of movies; track movie.title) {
-      <app-card
-        [title]="movie.title"
-        [description]="movie.description"
-        [duration]="movie.duration"
-        [ageRating]="movie.ageRating"
-        [provider]="movie.provider"
-        [approvalRating]="movie.approvalRating"
-        [rank]="movie.rank">
-      </app-card>
+    @if (movies.length > 0) {
+      @for (movie of movies; track movie.title) {
+        <app-card
+          [title]="movie.title"
+          [description]="movie.description"
+          [duration]="movie.duration"
+          [ageRating]="movie.ageRating"
+          [providers]="movie.providers"
+          [approvalRating]="movie.approvalRating"
+          [rank]="movie.rank">
+        </app-card>
+      }
+    } @else {
+      <p style="color: gray; margin-left: 20px;">Carregando catálogo ou nenhum filme encontrado...</p>
     }
   </div>
 </div>
