@@ -3,22 +3,20 @@ import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { LoginRequest } from '../../../models/auth.models';
-import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
   imports: [
     RouterLink,
-    ReactiveFormsModule,
-    CommonModule
+    ReactiveFormsModule
   ],
   templateUrl: './sign-in.html',
   styleUrl: './sign-in.css'
 })
 export class SignIn {
   loginForm: FormGroup;
-  errorMessage: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -33,9 +31,6 @@ export class SignIn {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      // Limpa erro antigo antes de tentar
-      this.errorMessage = '';
-
       const credentials: LoginRequest = {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password
@@ -43,19 +38,41 @@ export class SignIn {
 
       this.authService.login(credentials).subscribe({
         next: (response) => {
+          localStorage.setItem('token', response.token);
 
-          console.log('Login realizado!', response);
-          this.router.navigate(['/home']);
+          Swal.fire({
+            title: 'Login realizado!',
+            text: 'Redirecionando para o catálogo...',
+            icon: 'success',
+            timer: 1000,
+            showConfirmButton: false,
+            background: '#141414',
+            color: '#ffffff',
+            willClose: () => {
+              this.router.navigate(['/home']);
+            }
+          });
         },
         error: (err) => {
-          console.error('Erro no login:', err);
-
-          if (err.status === 401 || err.status === 403) {
-            this.errorMessage = 'E-mail ou senha incorretos. Tente novamente.';
-          } else {
-            this.errorMessage = 'Ocorreu um erro no servidor. Tente mais tarde.';
-          }
+          Swal.fire({
+            title: 'Acesso Negado',
+            text: 'E-mail ou senha incorretos. Tente novamente.',
+            icon: 'error',
+            confirmButtonText: 'Tentar de novo',
+            confirmButtonColor: '#E50914',
+            background: '#141414',
+            color: '#ffffff'
+          });
         }
+      });
+    } else {
+      Swal.fire({
+        title: 'Campos Inválidos',
+        text: 'Por favor, preencha seu e-mail e senha.',
+        icon: 'warning',
+        confirmButtonColor: '#E50914',
+        background: '#141414',
+        color: '#ffffff'
       });
     }
   }

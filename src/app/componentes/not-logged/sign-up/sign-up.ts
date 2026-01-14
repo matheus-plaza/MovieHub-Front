@@ -3,6 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { UserRequest } from '../../../models/auth.models';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-up',
@@ -41,17 +42,40 @@ export class SignUp {
 
       this.authService.register(userData).subscribe({
         next: (response) => {
-          console.log('Sucesso!', response);
-          alert('Conta criada com sucesso! Faça login.');
-          this.router.navigate(['/login']);
+          Swal.fire({
+            title: 'Bem-vindo ao MovieHub!',
+            text: 'Sua conta foi criada com sucesso.',
+            icon: 'success',
+            confirmButtonText: 'Fazer Login',
+            confirmButtonColor: '#E50914',
+            background: '#141414',
+            color: '#ffffff'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.router.navigate(['/login']);
+            }
+          });
         },
         error: (erro) => {
-          console.error('Erro ao cadastrar:', erro);
-          alert('Erro ao criar conta. Verifique os dados.');
+          Swal.fire({
+            title: 'Ops!',
+            text: 'Erro ao criar conta. Verifique se o e-mail já existe.',
+            icon: 'error',
+            confirmButtonColor: '#E50914',
+            background: '#141414',
+            color: '#ffffff'
+          });
         }
       });
     } else {
-      alert('Preencha todos os campos corretamente!');
+      Swal.fire({
+        title: 'Atenção',
+        text: 'Preencha todos os campos corretamente!',
+        icon: 'warning',
+        confirmButtonColor: '#E50914',
+        background: '#141414',
+        color: '#ffffff'
+      });
     }
   }
 }

@@ -5,12 +5,6 @@
 
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-        @if (errorMessage) {
-          <div class="alert alert-danger text-center p-2 mb-3" role="alert">
-            {{ errorMessage }}
-          </div>
-        }
-
         <div class="mb-3">
           <input type="text"
                  class="form-control custom-input"
