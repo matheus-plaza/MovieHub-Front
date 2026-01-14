@@ -3,21 +3,31 @@
     <div class="login-box p-4">
       <h1 class="mb-4">Entre na sua conta</h1>
 
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        @if (errorMessage) {
+          <div class="alert alert-danger text-center p-2 mb-3" role="alert">
+            {{ errorMessage }}
+          </div>
+        }
+
         <div class="mb-3">
           <input type="text"
                  class="form-control custom-input"
+                 formControlName="email"
                  placeholder="E-mail ou número de telefone">
         </div>
 
         <div class="mb-3">
           <input type="password"
                  class="form-control custom-input"
+                 formControlName="password"
                  placeholder="Sua senha">
         </div>
 
-        <button type="submit" class="btn btn-danger w-100 custom-button mb-3">
-          Entrar na conta
+        <button type="submit"
+                class="btn btn-danger w-100 custom-button mb-3"
+                [disabled]="!loginForm.valid"> Entrar na conta
         </button>
 
         <div class="text-center new-here">
