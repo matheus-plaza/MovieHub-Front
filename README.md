@@ -1,59 +1,106 @@
 # 🎬 MovieHub
 
-Bem-vindo ao repositório do **MovieHub**, um hub de filmes e séries desenvolvido para catalogar e gerenciar informações sobre entretenimento, incluindo detalhes, categorias e serviços de *streaming* disponíveis.
+![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.0-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-17+-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-Este repositório contém o código do **Backend** da aplicação, construído com Java e o *framework* Spring Boot. O **Frontend** está em fase de planejamento e será desenvolvido com **Angular**.
+> **MovieHub** é uma aplicação Fullstack robusta para catálogo e gestão de filmes, integrando um backend seguro em Spring Boot com um frontend moderno e reativo em Angular.
 
-## 🚀 Status do Projeto
+---
 
-| Componente | Linguagem/Framework | Status |
-| :--- | :--- | :--- |
-| **Backend (API)** | Java (Spring Boot) | Finalizado e Ativo |
-| **Frontend (Web)** | Angular | Em Desenvolvimento |
+## 📸 Funcionalidades & Interface (UX)
+
+### 🍿 Catálogo e Gestão
+A aplicação conta com um dashboard imersivo e formulários reativos para gestão de conteúdo.
+
+| Catálogo Dinâmico (Home) | Cadastro de Filmes |
+|:-------------------------:|:-------------------:|
+| ![Home](./screenshots/img_5.png) | ![Create Movie](./screenshots/img_6.png) |
+| *Cards com carrossel automático de streamings e indicadores de qualidade.* | *Formulário reativo com validação de dados e conversão automática de datas.* |
+
+### 🔐 Autenticação e Feedback Visual
+Experiência de usuário aprimorada com **SweetAlert2** para feedbacks de sucesso e erro, substituindo os alertas nativos do navegador.
+
+| Login Seguro | Feedback de Sucesso (Login) |
+|:-------------------------:|:-------------------:|
+| ![Login](./screenshots/img_2.png) | ![Success Login](./screenshots/img_4.png) |
+| *Interface limpa com tratamento de erros (401/403).* | *Feedback visual imediato e redirecionamento automático.* |
+
+| Cadastro de Usuário | Feedback de Criação |
+|:-------------------------:|:-------------------:|
+| ![Register](./screenshots/img.png) | ![Success Register](./screenshots/img_1.png) |
+| *Validação de e-mail e senha forte.* | *Confirmação visual estilizada.* |
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Backend (API RESTful)
+* **Java 17 & Spring Boot 3:** Base sólida e performática.
+* **Spring Security & JWT:** Autenticação Stateless segura com tokens Bearer.
+* **Hibernate/JPA:** Mapeamento Objeto-Relacional eficiente.
+* **Swagger/OpenAPI:** Documentação automática da API.
+* **PostgreSQL:** Banco de dados relacional robusto.
+
+### Frontend (SPA)
+* **Angular 17+ (Standalone Components):** Arquitetura moderna sem NgModules.
+* **Reactive Forms:** Controle total sobre validação de dados e estado dos formulários.
+* **RxJS:** Manipulação de fluxos assíncronos e integração com API.
+* **Guards:** Proteção de rotas baseada na validade e expiração do token.
+* **SweetAlert2:** Experiência de usuário (UX) aprimorada para feedbacks.
+
+---
+
+## 🏗️ Arquitetura e Modelagem
+
+O projeto segue uma arquitetura em camadas bem definida para garantir escalabilidade e manutenção.
+
+### Modelagem de Dados
+O sistema gerencia o relacionamento complexo entre Filmes, Categorias e Serviços de Streaming.
 
 
-### Estrutura e Serviços Chave
+### Destaques de Implementação
+* **Segurança:** Implementação customizada de `UserDetailsService` e Filtros de Segurança para interceptar e validar requisições HTTP.
+* **Tratamento de Erros:** `ControllerAdvice` global para padronizar respostas de erro (401, 403, 400) para o cliente.
+* **Frontend Interativo:** Lógica de "Carrossel de Streaming" no frontend para lidar com múltiplos provedores por filme de forma visualmente agradável.
 
-O projeto está organizado em serviços dedicados, garantindo a separação de responsabilidades:
+---
 
-| Serviço | Funcionalidade Principal | Referência |
-| :--- | :--- | :--- |
-| `AuthService` | Implementa `UserDetailsService`, carregando usuários pelo email. | `AuthService.java` |
-| `UserService` | Gerenciamento de usuários, incluindo a codificação de senhas com `PasswordEncoder`. | `UserService.java` |
-| `MovieService` | CRUD completo para filmes, gerenciando relacionamento com **Categorias** e **Streamings**. | `MovieService.java` |
-| `CategoryService` | CRUD para as categorias dos filmes (Ex: Ação, Drama). | `CategoryService.java` |
-| `StreamingService` | CRUD para os serviços de *streaming* (Ex: Netflix, Prime Video). | `StreamingService.java` |
+## 🚀 Como Executar
 
-## 📐 Frontend (Angular)
+### Pré-requisitos
+* Java 17+
+* Node.js & NPM
+* PostgreSQL
+* Maven
 
-Estou ativamente iniciando o desenvolvimento do **Frontend** do MovieHub utilizando **Angular**.
-
-### Objetivos do Frontend
-
-1.  **Interface Moderna:** Criar uma experiência de usuário (UX) intuitiva e moderna.
-2.  **Consumo de API:** Integrar-se totalmente com o *backend* Java/Spring Boot para buscar, criar e atualizar dados.
-3.  **Componentes Reutilizáveis:** Utilizar a modularidade do Angular para construir componentes eficientes e reutilizáveis (Ex: Cartões de Filmes, Navegação, Formulários de SignUp).
-4.  **Gerenciamento de Estado:** Implementar uma estratégia de gerenciamento de estado para manter a aplicação rápida e responsiva.
-5.  **Temas:** Possivelmente implementar um sistema de temas para alternância (Ex: Dark/Light Mode).
-
-## 🛠️ Como Executar o Backend
-
-Para rodar o projeto Java (Spring Boot) localmente, siga os passos abaixo:
-
-1.  **Pré-requisitos:** Certifique-se de ter o **Java 17** e o **Maven** instalados.
-2.  **Banco de Dados:** Configure uma instância do **PostgreSQL** e atualize as credenciais no arquivo `application.properties` (ou `application.yml`).
-3.  **Execução:**
+### 1. Backend (Spring Boot)
+1.  Configure o banco de dados PostgreSQL no arquivo `application.properties`.
+2.  Execute o projeto:
     ```bash
-    # Navegue até a raiz do projeto onde está o pom.xml
     ./mvnw spring-boot:run
     ```
+3.  Acesse o Swagger UI: `http://localhost:8080/swagger-ui.html`
 
-### Documentação da API
+### 2. Frontend (Angular)
+1.  Navegue até a pasta do frontend.
+2.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+3.  Inicie o servidor de desenvolvimento:
+    ```bash
+    npm start
+    ```
+4.  Acesse: `http://localhost:4200`
 
-Após a inicialização, a documentação da API (Swagger UI) estará disponível em:
+---
 
-**`http://localhost:8080/swagger-ui.html`**
+## 🤝 Autor
 
-## 🤝 Contato
+Desenvolvido por **Matheus Plaza** com foco em Clean Code e Melhores Práticas de Desenvolvimento Web.
 
-Desenvolvido por: **matheus-plaza**
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-plaza)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matheus-plaza)
